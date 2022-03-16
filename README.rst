@@ -68,6 +68,29 @@ Following tabele contains all necessary components to build a single cluster nod
 +-------+------------------------------------+---------------+
 
 
+Assembly instructions
+---------------------
+
+1. Insert the RPi LED lightguide into the main case and fasten the bolt
+   
+   - Mount WM-35 din clip with two bolts
+
+2. Insert RPi LED indicator into the loghtguide
+
+   - Mount PoE hat on the Raspberry PI and put it in the main case
+   - Insert FFC of the LED indicator into Raspberry Pi camera connector
+
+3. Fasten Raspberry and the PoE hat using M2.5 bolts
+
+   - Apply the thermal paste to the processor and the IC on PoE Hat
+
+4. Put the cover on and press it down so that the paste evenly covers the surface of the processor and the IC
+
+   - Place the bolts in the holes on the bottom of the housing and tighten them gently.
+
+.. figure:: img/rpi-cluster-enclosure-assembly-drawing.png
+
+
 License
 =======
 
