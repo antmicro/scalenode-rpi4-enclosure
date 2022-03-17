@@ -51,7 +51,7 @@ Assembly instructions
 
 A basic BOM is provided as a separate `CSV file <csv/rpi-enclosure-bom.csv>`_ to aid the component sourcing.
 The assembly instructions below refer to the parts from that BOM.
-The assembly includes a custom RPi LED indicator PCB which has been released as an Open Source Hardware project in a separate repository.
+The assembly includes a custom `RPi LED Flex PCB <https://github.com/antmicro/rpi-led-flex-board>`_ which has been released as an Open Source Hardware project in a separate repository.
 
 .. figure:: img/rpi-cluster-enclosure-assembly-drawing-dark.png
 
