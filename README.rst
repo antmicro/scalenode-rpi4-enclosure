@@ -7,13 +7,15 @@ Copyright (c) 2022 `Antmicro <https://www.antmicro.com>`_
 Overview
 --------
 
-This repository contains open hardware design files of the Antmicro's Raspberry Pi cluster enclosure.
-It is designed to be a modular and stackable solution for KVM cluster based on Raspberry Pi 4B.
-The enclosure provides passive cooling, device status indication and it fits the 1U of a server rack.
-The design files are in step file extension.
+This repository contains open hardware design files of the Raspberry Pi cluster enclosure.
 
-.. figure:: img/drawing.png
+.. figure:: img/arm-cluster-enclosure.png
    :width: 70%
+
+It is designed to be a modular and stackable solution for an ARM cluster based on Raspberry Pi 4B. 
+The design files are provided in a STEP file format.
+The geometry of the metal body of the enclosure allows for machining with most of the CNC prototyping services.
+The enclosure includes a translucent 3D-printable light guide which was optimized for SLA printing with translucent resins.
 
 Repository structure
 --------------------
@@ -23,76 +25,59 @@ The remaining files are stored in the following directories:
 * ``pts`` - contains the project parts in separate files
 * ``img`` - contains graphics for this README
 * ``dwg`` - contains mechanical drawings
+* ``csv`` - contains BOM
 
-Key Features
+Key features
 ------------
 * Passive cooling design
-* DIN rail mount bracket
+* DIN rail mount
 * RGB LED indicator
 * Modular and stackable
-* 1U of a 19" rack cabbinet fits up to 56 units
+* 2U in a 19" rack cabinet
+* Up to 56 units fit on a single floor of the rack cabinet
 
+Mechanical outline
+------------------
 
-Bill of materials
------------------
-Following tabele contains all necessary components to build a single cluster node.
+The enclosure provides passive cooling and was designed in a stackable form on a TH35 (DIN) rail.
+There are multiple off-the-shelf DIN rail panel brackets available for 19" rack cabinets. 
+The enclosure occupies 2U while installed in a rack cabinet.
+Below there is a mechanical overview provided with outline dimensions provided in millimeters.
 
-+-------+------------------------------------+---------------+
-| Item  | Description                        | Qty per unit  |
-+=======+====================================+===============+
-| 1     | RPi Enclosure                      | 1             |
-+-------+------------------------------------+---------------+
-| 2     | RPi LED lightguide                 | 1             |
-+-------+------------------------------------+---------------+
-| 3     | RPi LED Indicator                  | 1             |
-+-------+------------------------------------+---------------+
-| 4     | Raspberry Pi 4 B 8GB RAM 1.5GHz    | 1             |
-+-------+------------------------------------+---------------+
-| 5     | PoE Hat UCTRONICS U6109            | 1             |
-+-------+------------------------------------+---------------+
-| 6     | WM-35 DIN clip                     | 1             |
-+-------+------------------------------------+---------------+
-| 7     | Enclosure fastening bolts(M1.6x5)  | 3             |
-+-------+------------------------------------+---------------+
-| 8     | Lightguide fastening bolt (M1.6x5) | 1             |
-+-------+------------------------------------+---------------+
-| 9     | Poe Hat fastening bolts (M2.5x5)   | 2             |
-+-------+------------------------------------+---------------+
-| 10    | RPi fastening bolts (M2.5x5)       | 2             |
-+-------+------------------------------------+---------------+
-| 11    | DIN clip fastening bolts (M4x10)   | 2             |
-+-------+------------------------------------+---------------+
-| 12    | PoE Hat standoff (2.7x03)          | 2             |
-+-------+------------------------------------+---------------+
-| 13    | Thermal paste                      | 1g            |
-+-------+------------------------------------+---------------+
-
+.. figure:: img/drawing-dark.png
+   :width: 70%
 
 Assembly instructions
 ---------------------
 
-1. Insert the RPi LED lightguide into the main case and fasten the bolt
+A basic BOM is provided as a separate `CSV file <csv/rpi-enclosure-bom.csv>`_ to aid the component sourcing.
+The assembly instructions below refer to the parts from that BOM.
+The assembly includes a custom RPi LED indicator PCB which has been released as an Open Source Hardware project in a separate repository.
+
+.. figure:: img/rpi-cluster-enclosure-assembly-drawing-dark.png
+
+#. Insert the 3D-printed RPi LED lightguide into the main case and fasten the bolt
    
-   - Mount WM-35 din clip with two bolts
+   * Mount the WM-35 din clip with two bolts
 
-2. Insert RPi LED indicator into the loghtguide
+#. Insert RPi LED indicator into the lightguide
 
-   - Mount PoE hat on the Raspberry PI and put it in the main case
-   - Insert FFC of the LED indicator into Raspberry Pi camera connector
+   * Mount the UCTRONICS (`UC U6109 <https://www.uctronics.com/poe-hat-for-raspberry-pi-4-uctronics-mini-power-over-ethernet-expansion-board-for-raspberry-pi-4-b-3-b.html>`_) PoE hat on the Raspberry PI and put it in the main case
+   * Insert FFC of the LED indicator into the camera connector (J3) located on the Raspberry Pi
 
-3. Fasten Raspberry and the PoE hat using M2.5 bolts
+#. Fasten Raspberry Pi and the PoE hat using M2.5 bolts
 
-   - Apply the thermal paste to the processor and the IC on PoE Hat
+   * Apply some thermal paste to the processor and the DC/DC regulator on the PoE Hat
 
-4. Put the cover on and press it down so that the paste evenly covers the surface of the processor and the IC
+#. Put the cover on and press it down so that the paste evenly covers the surface of the ICs
 
-   - Place the bolts in the holes on the bottom of the housing and tighten them gently.
+   * Place the bolts in the holes on the bottom of the housing and tighten them gently
+   
+#. Insert an SD card to the Raspberry using a slot located under the DIN clip
 
-.. figure:: img/rpi-cluster-enclosure-assembly-drawing.png
-
+#. Attach Ethernet cable connected to a PoE switch/injector and check if the RPi boots
 
 License
 =======
 
 `Apache-2.0 <LICENSE>`_
-
