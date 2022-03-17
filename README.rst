@@ -10,7 +10,6 @@ Overview
 This repository contains open hardware design files of the Raspberry Pi cluster enclosure.
 
 .. figure:: img/arm-cluster-enclosure.png
-   :width: 70%
 
 It is designed to be a modular and stackable solution for an ARM cluster based on Raspberry Pi 4B. 
 The design files are provided in a STEP file format.
@@ -45,7 +44,7 @@ The enclosure occupies 2U while installed in a rack cabinet.
 Below there is a mechanical overview provided with outline dimensions provided in millimeters.
 
 .. figure:: img/drawing-dark.png
-   :width: 70%
+
 
 Assembly instructions
 ---------------------
