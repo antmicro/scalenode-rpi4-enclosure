@@ -1,13 +1,13 @@
-==============================
-Raspberry Pi cluster enclosure
-==============================
+=========================
+Scalenode RPi 4 enclosure
+=========================
 
 Copyright (c) 2022 `Antmicro <https://www.antmicro.com>`_
 
 Overview
 --------
 
-This repository contains open hardware design files of the Raspberry Pi cluster enclosure.
+This repository contains open hardware design files of the Raspberry Pi 4 cluster enclosure.
 
 .. figure:: img/arm-cluster-enclosure.png
 
